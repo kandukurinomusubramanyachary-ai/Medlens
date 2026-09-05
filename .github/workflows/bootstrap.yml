@@ -1,0 +1,33 @@
+name: Bootstrap MedLens source
+
+on:
+  push:
+    paths:
+      - '.bootstrap/chunk15.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore MedLens source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .bootstrap/chunk*.txt | base64 -d > /tmp/medlens.tar.xz
+          tar -xJf /tmp/medlens.tar.xz -C .
+          rm -rf .bootstrap
+          rm -f .init __probe*.txt
+          rm -f .github/workflows/bootstrap.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: checkpoint MedLens hackathon build"
+          git push origin HEAD:main
