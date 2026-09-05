@@ -1,0 +1,32 @@
+name: Restore MedLens source
+
+on:
+  push:
+    paths:
+      - '.restore/chunk15.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore source tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .restore/chunk*.txt | base64 -d > /tmp/medlens.tar.xz
+          shopt -s dotglob extglob
+          rm -rf -- !(.git)
+          tar -xJf /tmp/medlens.tar.xz -C .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: checkpoint MedLens hackathon build" || exit 0
+          git push origin HEAD:main
