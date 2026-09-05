@@ -1,0 +1,17 @@
+:root {
+  --color-canvas: #f8fafc; --color-surface: #ffffff; --color-surface-muted: #f1f5f9;
+  --color-ink: #172b42; --color-body: #334155; --color-muted: #64748b; --color-subtle: #94a3b8;
+  --color-hairline: #e2e8f0; --color-input: #cbd5e1; --color-brand-50: #eff6ff; --color-brand-100: #dbeafe; --color-brand-600: #2563eb; --color-brand-700: #1d4ed8; --color-brand-900: #1e3a8a;
+  --status-normal-text: #166534; --status-normal-bg: #f0fdf4; --status-normal-border: #bbf7d0;
+  --status-low-text: #92400e; --status-low-bg: #fffbeb; --status-low-border: #fde68a;
+  --status-high-text: #9f1239; --status-high-bg: #fff1f2; --status-high-border: #fecdd3;
+  --status-review-text: #7c2d12; --status-review-bg: #fff7ed; --status-review-border: #fed7aa;
+  --status-verified-text: #1e40af; --status-verified-bg: #eff6ff; --status-verified-border: #bfdbfe;
+  --status-edited-text: #475569; --status-edited-bg: #f8fafc; --status-edited-border: #cbd5e1;
+  --destructive-text: #b42318; --destructive-bg: #fef3f2; --destructive-border: #fecdca;
+  --color-focus-ring: #2563eb; --color-focus-ring-offset: #ffffff; --color-overlay: #14243966;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-pill: 999px;
+  --shadow-popover: 0 8px 32px #172b421f; --shadow-modal: 0 24px 80px #172b4233;
+  --z-tooltip: 10; --z-popover: 30; --z-topbar: 40; --z-dialog: 50;
+  --font-sans: 'Geist Variable', sans-serif; --font-mono: 'Geist Mono Variable', monospace;
+}

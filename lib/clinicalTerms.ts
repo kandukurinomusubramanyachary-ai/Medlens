@@ -1,0 +1,15 @@
+export const terms = {
+  status: { WITHIN: 'Within source range', BELOW: 'Below source range', ABOVE: 'Above source range', NO_SOURCE_RANGE: 'Source range unavailable', UNABLE_TO_DETERMININE: 'Review required' },
+  review: 'Review required', verified: 'Human verified', edited: 'Edited after extraction', rejected: 'Rejected extraction',
+  provenance: { user: 'User provided', report: 'Extracted from report', ai: 'AI generated', aiExtracted: 'AI extracted' },
+  confidence: { HIGH: 'High', REVIEW_SUGGESTED: 'Review suggested', UNCERTAIN: 'Uncertain' },
+  confidenceLabel: 'Extraction confidence', noRange: 'Not provided in source', notProvided: 'Not provided',
+  disclaimer: 'MedLens organizes available medical information. It does not provide diagnosis or treatment advice.',
+  processError: "We couldn't reliably process this report.", processErrorBody: 'No extracted values have been added to the patient record.',
+  conflict: 'Conflicting information detected', clarify: 'Clarification needed',
+  metrics: { reports: 'Reports processed', observations: 'Observations extracted', outside: 'Outside source range', review: 'Requires review' },
+  uploadHelper: 'Files are processed securely. MedLens does not expose API credentials in the browser.',
+  demo: 'Fictional demo record', template: 'Rule-based summary', summary: 'Patient-friendly summary',
+  empty: { reports: 'No reports yet', labs: 'No laboratory results yet.', review: 'Nothing needs review.', filtered: 'No tests match these filters.', timeline: 'Two or more dated results are needed to build a timeline.', summary: 'A patient-friendly summary is generated once reports are processed.' },
+  nav: { overview: 'Overview', labs: 'Laboratory results', reports: 'Reports', timeline: 'Timeline', review: 'Review & verify', summary: 'Patient summary', intake: 'Patient details' },
+} as const;
